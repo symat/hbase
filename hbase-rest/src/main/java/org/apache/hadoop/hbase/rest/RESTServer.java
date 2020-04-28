@@ -305,7 +305,7 @@ public class RESTServer implements Constants {
       HttpConfiguration httpsConfig = new HttpConfiguration(httpConfig);
       httpsConfig.addCustomizer(new SecureRequestCustomizer());
 
-      SslContextFactory sslCtxFactory = new SslContextFactory();
+      SslContextFactory.Server sslCtxFactory = new SslContextFactory.Server();
       String keystore = conf.get(REST_SSL_KEYSTORE_STORE);
       String password = HBaseConfiguration.getPassword(conf,
           REST_SSL_KEYSTORE_PASSWORD, null);
