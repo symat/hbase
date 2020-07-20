@@ -41,7 +41,7 @@ import org.apache.yetus.audience.InterfaceAudience;
 import org.apache.yetus.audience.InterfaceStability;
 import org.apache.zookeeper.server.ServerConfig;
 import org.apache.zookeeper.server.ZooKeeperServerMain;
-import org.apache.zookeeper.server.admin.AdminServer.AdminServerException;
+import org.apache.zookeeper.server.admin.AdminServer;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
 import org.apache.zookeeper.server.quorum.QuorumPeerMain;
 
@@ -83,7 +83,7 @@ public final class HQuorumPeer {
   }
 
   private static void runZKServer(QuorumPeerConfig zkConfig)
-          throws IOException, AdminServerException {
+          throws IOException, AdminServer.AdminServerException {
     if (zkConfig.isDistributed()) {
       QuorumPeerMain qp = new QuorumPeerMain();
       qp.runFromConfig(zkConfig);
