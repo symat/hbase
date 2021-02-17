@@ -136,6 +136,7 @@ public class AssignRegionHandler extends EventHandler {
       cleanUpAndReportFailure(e);
       return;
     }
+    // abort here?
     rs.postOpenDeployTasks(new PostOpenDeployContext(region, openProcId, masterSystemTime));
     rs.addRegion(region);
     LOG.info("Opened {}", regionName);
